@@ -1,5 +1,6 @@
 
 import Banner from '../Banner/Banner';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 const Root = () => {
@@ -7,6 +8,7 @@ const Root = () => {
         <div>
             <Header></Header>
             <Banner></Banner>
+            <Footer></Footer>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="mt-10 flex justify-center items-center flex-col">
+        <div className="py-10 flex justify-center items-center flex-col  bg-purple-500">
             <h1 className="container mx-auto text-center text-white font-bold lg:text-5xl text-2xl">
                 Upgrade Your Tech Accessorize with <br /> Gadget Heaven Accessories
             </h1>
