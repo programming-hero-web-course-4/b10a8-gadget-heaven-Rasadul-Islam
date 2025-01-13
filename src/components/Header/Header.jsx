@@ -17,7 +17,9 @@ const Header = () => {
         <div>
             <header className="text-purple-500">
                 <nav className="container mx-auto flex items-center justify-between font-bold px-2">
+                    {/* Logo */}
                     <Link to='/' className="lg:text-xl text-base">Gadget Heaven</Link>
+                    {/* button */}
                     <ul
                         className={`flex flex-col md:flex md:flex-row  md:items-center md:justify-center lg:text-base text-sm absolute right-5 top-8 text-right px-5 md:py-2 md:relative md:top-0 bg-gray-300 md:bg-transparent rounded-lg gap-x-10 gap-y-2 py-5   mt-2 ${
                             open ? "" : "hidden"
@@ -38,6 +40,8 @@ const Header = () => {
                             </li>
                         ))}
                     </ul>
+
+                    {/* Icons */}
                     <div className="flex gap-5">
                         <IoCartOutline className="bg-white text-black text-3xl rounded-full p-1"></IoCartOutline>
                         <GrFavorite className="bg-white text-black text-3xl rounded-full p-1"></GrFavorite>

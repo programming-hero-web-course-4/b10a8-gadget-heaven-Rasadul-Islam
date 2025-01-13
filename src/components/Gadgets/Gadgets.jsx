@@ -11,7 +11,7 @@ const Gadgets = () => {
       .then((res) => res.json())
       .then((data) => {
         setGadgets(data);
-        setFilteredGadgets(data); // Show all gadgets by default
+        setFilteredGadgets(data); 
       });
   }, []);
 
@@ -31,8 +31,7 @@ const Gadgets = () => {
   return (
     <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
-      
-      <div className="w-full md:w-1/5 p-5 border-2 border-gray-200 h-fit flex md:flex-col flex-row rounded-xl md:mt-24 ">
+      <div className="mt-10 w-full md:w-1/5 p-5 border-2 border-gray-200 h-fit flex md:flex-col flex-row rounded-xl md:mt-24 ">
         <ul className="gap-3 text-sm md:text-lg w-full md:w-full flex flex-row md:flex-col font-bold justify-around">
           {["All Product", "Phone", "Laptop", "Accessories", "Watch"].map((category) => (
             <li key={category}>
