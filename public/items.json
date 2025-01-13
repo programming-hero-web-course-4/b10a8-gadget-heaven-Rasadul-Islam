@@ -1,0 +1,188 @@
+[
+    {
+        "product_id": "P1001",
+        "product_title": "iPhone 15 Pro Max",
+        "product_image": "https://i.ibb.co.com/2W1yYhz/Apple-i-Phone-15-Pro-lineup-hero-230912-jpg-news-app-ed.jpg",
+        "category": "Phone",
+        "price": 1399,
+        "description": "The latest iPhone with A17 Bionic chip, Dynamic Island, and an advanced camera system.",
+        "specification": {
+            "Display": "6.7-inch Super Retina XDR",
+            "Processor": "A17 Bionic",
+            "Storage": "256GB",
+            "Camera": "48MP Main, 12MP Ultra-Wide",
+            "Battery": "5000mAh"
+        },
+        "availability": true,
+        "rating": 4.8,
+        "brand": "Apple",
+        "color": "Titanium"
+    },
+    {
+        "product_id": "P1002",
+        "product_title": "Samsung Galaxy S23 Ultra",
+        "product_image": "https://i.ibb.co.com/THQxsS1/images-q-tbn-ANd9-Gc-Qegj2xjn69-Wxlu0-GUj-Kswdj-Xql-N7s-DHMz-Ksw-s.jpg",
+        "category": "Phone",
+        "price": 1249,
+        "description": "A high-performance smartphone with a 200MP camera and Snapdragon 8 Gen 2 processor.",
+        "specification": {
+            "Display": "6.8-inch Dynamic AMOLED 2X",
+            "Processor": "Snapdragon 8 Gen 2",
+            "Storage": "512GB",
+            "Camera": "200MP + 12MP + 10MP",
+            "Battery": "5000mAh"
+        },
+        "availability": true,
+        "rating": 4.7,
+        "brand": "Samsung",
+        "color": "Phantom Black"
+    },
+    {
+        "product_id": "P1003",
+        "product_title": "Google Pixel 8",
+        "product_image": "https://i.ibb.co.com/d42w4rf/images-q-tbn-ANd9-Gc-TPo-Ih-Gt-IOh77-XXYBN-t7v-B2scwrtkdj-Jw-TMQ-s.jpg",
+        "category": "Phone",
+        "price": 899,
+        "description": "Google's flagship phone with Tensor G3 chip and an exceptional camera experience.",
+        "specification": {
+            "Display": "6.2-inch OLED",
+            "Processor": "Google Tensor G3",
+            "Storage": "128GB",
+            "Camera": "50MP Main, 12MP Ultra-Wide",
+            "Battery": "4600mAh"
+        },
+        "availability": true,
+        "rating": 4.6,
+        "brand": "Google",
+        "color": "Hazel"
+    },
+    {
+        "product_id": "P1004",
+        "product_title": "OnePlus 11",
+        "product_image": "https://i.ibb.co.com/q7gvfhn/images-q-tbn-ANd9-Gc-Se44q-S3-Xs-YY3-Ds-NTOb-V-Qjx-YGRv-I18-DGf-Ecg-s.jpg",
+        "category": "Phone",
+        "price": 699,
+        "description": "A premium phone with Snapdragon 8 Gen 2 and Hasselblad-tuned cameras.",
+        "specification": {
+            "Display": "6.7-inch AMOLED",
+            "Processor": "Snapdragon 8 Gen 2",
+            "Storage": "256GB",
+            "Camera": "50MP + 48MP + 32MP",
+            "Battery": "5000mAh"
+        },
+        "availability": true,
+        "rating": 4.5,
+        "brand": "OnePlus",
+        "color": "Eternal Green"
+    },
+    {
+        "product_id": "P1005",
+        "product_title": "Sony Xperia 5 V",
+        "product_image": "https://i.ibb.co.com/WxVyHJf/images-q-tbn-ANd9-Gc-Ra-O2o-SPUl-L0fpk-Cg-IR7-K7k-Yi-Emk8t-W9-FOYk-A-s.jpg",
+        "category": "Phone",
+        "price": 999,
+        "description": "A compact flagship phone with a focus on photography and high performance.",
+        "specification": {
+            "Display": "6.1-inch OLED",
+            "Processor": "Snapdragon 8 Gen 2",
+            "Storage": "128GB",
+            "Camera": "52MP + 12MP",
+            "Battery": "5000mAh"
+        },
+        "availability": true,
+        "rating": 4.4,
+        "brand": "Sony",
+        "color": "Platinum Silver"
+    },
+    {
+        "product_id": "P1006",
+        "product_title": "Xiaomi 13 Pro",
+        "product_image": "https://i.ibb.co.com/d6dWjHv/images-q-tbn-ANd9-Gc-Qt-Y24-Jo-HBe-CV-m-MIy96-ZS1-Zfnat-Klvb4-Zik-Q-s.jpg",
+        "category": "Phone",
+        "price": 799,
+        "description": "A sleek smartphone with Leica camera technology and advanced AI features.",
+        "specification": {
+            "Display": "6.73-inch AMOLED",
+            "Processor": "Snapdragon 8 Gen 2",
+            "Storage": "512GB",
+            "Camera": "50MP Triple Leica",
+            "Battery": "4820mAh"
+        },
+        "availability": true,
+        "rating": 4.6,
+        "brand": "Xiaomi",
+        "color": "Ceramic White"
+    },
+    {
+        "product_id": "P2001",
+        "product_title": "MacBook Air 15-inch",
+        "product_image": "https://i.ibb.co.com/PWYpTvQ/macbookair15-05.jpg",
+        "category": "Laptop",
+        "price": 1299,
+        "description": "A lightweight laptop with M2 chip and a stunning Retina display.",
+        "specification": {
+            "Display": "15.3-inch Retina",
+            "Processor": "M2",
+            "RAM": "16GB",
+            "Storage": "512GB SSD",
+            "Battery": "18-hour battery life"
+        },
+        "availability": true,
+        "rating": 4.8,
+        "brand": "Apple",
+        "color": "Midnight"
+    },
+    {
+        "product_id": "P2002",
+        "product_title": "Dell XPS 13 Plus",
+        "product_image": "https://i.ibb.co.com/LJjsjCC/Dell-XPS-13-Plus-9320-2023-Produktbild-Test.jpg",
+        "category": "Laptop",
+        "price": 1199,
+        "description": "A cutting-edge laptop with an InfinityEdge display and Intel Evo certification.",
+        "specification": {
+            "Display": "13.4-inch OLED",
+            "Processor": "Intel Core i7-1360P",
+            "RAM": "16GB",
+            "Storage": "1TB SSD",
+            "Battery": "14-hour battery life"
+        },
+        "availability": true,
+        "rating": 4.7,
+        "brand": "Dell",
+        "color": "Platinum"
+    },
+    {
+        "product_id": "P3001",
+        "product_title": "Apple AirPods Pro (2nd Gen)",
+        "product_image": "https://i.ibb.co.com/sJvDGqP/images-q-tbn-ANd9-Gc-QDw-K7g4q-Xoq-Di-Uq-A-Lf-BHv-uifjxry-M5-V8qg-s.jpg",
+        "category": "Accessories",
+        "price": 249,
+        "description": "High-quality noise-canceling earbuds with immersive sound and spatial audio.",
+        "specification": {
+            "Connectivity": "Bluetooth 5.3",
+            "Features": "Noise cancellation, Spatial audio, Touch controls",
+            "Battery": "6 hours (24 hours with case)"
+        },
+        "availability": true,
+        "rating": 4.9,
+        "brand": "Apple",
+        "color": "White"
+    },
+    {
+        "product_id": "P3002",
+        "product_title": "Logitech MX Keys Advanced Keyboard",
+        "product_image": "https://i.ibb.co.com/K67rGFC/71-Os-Xe-VABl-L-AC-SL1500.jpg",
+        "category": "Accessories",
+        "price": 129,
+        "description": "A premium keyboard with a perfect balance of design and functionality.",
+        "specification": {
+            "Connectivity": "Bluetooth, USB-C",
+            "Features": "Backlit keys, Multi-device pairing",
+            "Battery": "Up to 10 days on a single charge"
+        },
+        "availability": true,
+        "rating": 4.8,
+        "brand": "Logitech",
+        "color": "Graphite"
+    }
+]

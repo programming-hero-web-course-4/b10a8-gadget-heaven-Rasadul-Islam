@@ -5,15 +5,26 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from './App.jsx';
+import Home from './components/Home/home.jsx';
 import Statistics from './components/Statistics/Statistics.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx'
 import Root from './components/Root/Root.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import ItemDetails from './components/ItemDetails/ItemDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "gadget/:product_Id",
+        element: <ItemDetails></ItemDetails>,
+      },
       {
         path: "/statistics",
         element: <Statistics></Statistics>,

@@ -1,5 +1,6 @@
 
-import Banner from '../Banner/Banner';
+// import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
@@ -7,7 +8,7 @@ const Root = () => {
     return (
         <div>
             <Header></Header>
-            <Banner></Banner>
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );
