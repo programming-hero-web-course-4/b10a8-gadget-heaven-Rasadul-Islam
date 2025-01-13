@@ -35,17 +35,17 @@ const Dashboard = () => {
             </div>
 
             {/* Display active tab content */}
-            <div className="pt-10">
+            <div className="py-10">
                 {activeTab === "Cart" ? (
                     <div>
                         {/* Cart content goes here */}
-                        <h2 className="text-2xl font-bold text-center">Your Cart Items</h2>
+                        <h2 className="text-2xl font-bold text-center">Cart Items</h2>
                         {/* Cart items display */}
                     </div>
                 ) : (
                     <div>
                         {/* Wishlist content goes here */}
-                        <h2 className="text-2xl font-bold text-center">Your Wishlist Items</h2>
+                        <h2 className="text-2xl font-bold text-center">Wishlist Items</h2>
                         {/* Wishlist items display */}
                     </div>
                 )}

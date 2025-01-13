@@ -2,9 +2,9 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='rounded-xl rounded-t-none p-1 border-x-2 border-b-2 border-gray-300 mb-20 md:mb-52 lg:mb-96'>
+        <div className='rounded-xl rounded-t-none px-1 pb-1 border-x-2 border-b-2 border-gray-300 mb-20 md:mb-52 lg:mb-96'>
               {/* Top Section */}
-            <div className="pt-5 md:pt-10 pb-32 lg:pb-40 flex justify-center bg-purple-500 items-center flex-col rounded-xl ">
+            <div className="pt-5 md:pt-10 pb-32 lg:pb-40 flex justify-center bg-purple-500 items-center flex-col rounded-xl rounded-t-none border-none">
                 <h1 className="container mx-auto text-center text-white font-bold lg:text-5xl text-2xl">
                     Upgrade Your Tech Accessorize with <br /> Gadget Heaven Accessories
                 </h1>

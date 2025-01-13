@@ -12,10 +12,11 @@ const Header = () => {
         { "path": "/statistics", "name": "Statistics", "id": 2 },
         { "path": "/dashboard", "name": "Dashboard", "id": 3 }
     ];
+    const headerBackground = location.pathname === "/" ? "bg-purple-500 mx-1 mt-1 border-x-2 border-t-2 rounded-xl rounded-b-none border-gray-300" : "bg-white";
 
     return (
         <div>
-            <header className="text-purple-500">
+            <header className={`${headerBackground}`}>
                 <nav className="container mx-auto flex items-center justify-between font-bold px-2">
                     {/* Logo */}
                     <Link to='/' className="lg:text-xl text-base">Gadget Heaven</Link>
