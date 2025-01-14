@@ -9,6 +9,7 @@ const Dashboard = () => {
     const items = useLoaderData();
     const [cardList, setCardList] = useState([]);
     const [wishList, setWishList] = useState([]);
+
     useEffect(() => {
         const storedCardList = getStoredCardList();
         const cardList = items.filter(item => storedCardList.includes(item.product_id));
@@ -17,8 +18,13 @@ const Dashboard = () => {
         const storedWishList = getStoredWishList();
         const wishList = items.filter(item => storedWishList.includes(item.product_id));
         setWishList(wishList);
+    }, [items]);
 
-    }, []);
+    // Sort List by price
+    const sortCardListByPrice = () => {
+        const sortedCardList = [...cardList].sort((a, b) => b.price - a.price);
+        setCardList(sortedCardList);
+    };
 
     return (
         <div className="relative z-0">
@@ -42,28 +48,33 @@ const Dashboard = () => {
                     <div className='bg-white text-black text-lg text-center mt-16'>
                         {/* Card List content */}
                         <TabPanel >
-                            <div className='container max-w-4xl  px-5 mx-auto'>
+                            <div className='container max-w-4xl px-5 mx-auto'>
                                 <div className='flex w-full justify-start items-center'>
                                     <div className='w-1/4 text-start'>
                                         <h1 className='font-bold'>Card </h1>
                                     </div>
                                     <div className='flex justify-end items-center w-3/4 gap-5 text-base'>
                                         <h1 className='font-bold'>Total Cost:</h1>
-                                        <button className='border-2 border-purple-400 text-purple-600 rounded-full px-3 py-1'>Sort by Price</button>
-                                        <button className=' bg-purple-400 rounded-full px-3 py-1 text-white border-none'>Purchase</button>
+                                        <button 
+                                            className='border-2 border-purple-400 text-purple-600 rounded-full px-3 py-1'
+                                            onClick={sortCardListByPrice}
+                                        >
+                                            Sort by Price
+                                        </button>
+                                        <button className='bg-purple-400 rounded-full px-3 py-1 text-white border-none'>Purchase</button>
                                     </div>
                                 </div>
                                 {/* Card items */}
                                 <div className='mt-10'>
                                     {cardList.map(card =>
                                         <div key={card.product_id}>
-                                            <div className='flex gap-5 justify-between bg-purple-100 mt-2 rounded-xl px-2'>
+                                            <div className='flex gap-5 justify-between bg-purple-100 mt-2 rounded-xl px-2 md:px-5 md:py-3'>
                                                 {/* product image */}
                                                 <div className='w-24 h-24 mt-2 justify-start flex'>
                                                     <img className='w-full h-full border-2 border-purple-400 rounded-xl' src={card.product_image} alt={card.product_title} />
                                                 </div>
                                                 {/* Product info */}
-                                                <div className='flex flex-col justify-start items-start'>
+                                                <div className='flex flex-col justify-start items-start text-start w-full'>
                                                     <h1 className='mt-1 font-bold capitalize'>{card.product_title}</h1>
                                                     <div className='flex gap-2 text-gray-500 text-base'>
                                                         <h1 className='mt-1'><span className='font-bold'>Brand:</span> {card.brand}</h1>,
