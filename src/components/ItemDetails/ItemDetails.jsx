@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { addToStoredCardList, addToStoredWishList } from "../../Utility/AddToDb";
+
 
 const ItemDetails = () => {
     const { product_Id } = useParams();
@@ -19,20 +21,24 @@ const ItemDetails = () => {
             });
     }, [product_Id]);
 
-    const handleAddToCart = () => {
-        if (item) {
-            setCart((prevCart) => [...prevCart, item]);
-            alert(`${item.product_title} has been added to your cart!`);
-        }
+    const handleAddToCart = (id) => {
+        // if (item) {
+        //     setCart((prevCart) => [...prevCart, item]);
+        //     alert(`${item.product_title} has been added to your cart!`);
+        // }
+
+        addToStoredWishList(id);
+        
     };
 
-    const handleAddToWishlist = () => {
+    const handleAddToWishlist = (id) => {
         if (item) {
             if (!wishlist.find((wishItem) => wishItem.product_id === item.product_id)) {
                 setWishlist((prevWishlist) => [...prevWishlist, item]);
                 alert(`${item.product_title} has been added to your wishlist!`);
             }
         }
+        addToStoredWishList(id);
     };
 
     // Loading Massage
@@ -103,13 +109,13 @@ const ItemDetails = () => {
                             {/* Buttons */}
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
                                 <button
-                                    onClick={handleAddToCart}
+                                    onClick={()=>handleAddToCart(item.product_id)}
                                     className="bg-purple-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition"
                                 >
                                     Add to Cart
                                 </button>
                                 <button
-                                    onClick={() => handleAddToWishlist(item)}
+                                    onClick={() => handleAddToWishlist(item.product_id)}
                                     className={`px-4 py-2 rounded-full transition ${wishlist.some((wishItem) => wishItem.product_id === item.product_id)
                                             ? "bg-gray-300 text-gray-400 cursor-not-allowed"
                                             : "border-2 border-gray-500 text-black  hover:bg-purple-200"
