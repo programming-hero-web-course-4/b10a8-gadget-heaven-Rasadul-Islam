@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { getStoredCardList, getStoredWishList } from '../../Utility/AddToDb';
+import { getStoredCardList, getStoredWishList, clearStoredCardList, clearStoredWishList } from '../../Utility/AddToDb';
 import { IoClose } from 'react-icons/io5';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
+import Swal from 'sweetalert2';
 
 const Dashboard = () => {
     const items = useLoaderData();
@@ -39,10 +40,25 @@ const Dashboard = () => {
     const toggleModal = () => {
         if (isModalOpen) {
             // Clear the cart when closing the modal
+            clearStoredCardList();
             setCardList([]);
         }
         setIsModalOpen(!isModalOpen);
     };
+
+    // wish list clear
+    const handleClearWishList = () => {
+        clearStoredWishList();
+        setWishList([]);
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: 'Success!',
+            text: "Successfully Clear the Wish List",
+            showConfirmButton: false,
+            timer: 3000,
+          });
+    }
 
     return (
         <div className="relative z-0">
@@ -132,8 +148,13 @@ const Dashboard = () => {
                         <TabPanel>
                             <div className="container max-w-4xl px-5 mx-auto">
                                 <div className="flex w-full justify-start items-center">
-                                    <div className="w-full text-start">
+                                    <div className="w-full flex justify-between text-start">
                                         <h1 className="font-bold py-1">Wishlist:</h1>
+                                        <button
+                                            onClick={() => {
+                                                handleClearWishList();
+                                            }}
+                                            className="font-bold py-1 border-purple-500 border-2 rounded-full px-3">List clear</button>
                                     </div>
                                 </div>
                                 <div>

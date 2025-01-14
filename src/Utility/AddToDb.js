@@ -69,4 +69,17 @@ const addToStoredWishList = (id) => {
         localStorage.setItem('wish-list', storedListStr);
     }
 }
-export { addToStoredCardList, addToStoredWishList, getStoredCardList, getStoredWishList };
+const clearStoredCardList = () => {
+    localStorage.removeItem("card-list");
+};
+const clearStoredWishList = () => {
+    localStorage.removeItem("wish-list");
+};
+export { 
+    addToStoredCardList,
+    addToStoredWishList,
+    getStoredCardList,
+    getStoredWishList,
+    clearStoredCardList,
+    clearStoredWishList,
+};
