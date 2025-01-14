@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getStoredCardList, getStoredWishList, clearStoredCardList, clearStoredWishList } from '../../Utility/AddToDb';
 import { IoClose } from 'react-icons/io5';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Dashboard = () => {
     const items = useLoaderData();
@@ -13,6 +14,7 @@ const Dashboard = () => {
     const [wishList, setWishList] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
+    const Navigete = useNavigate();
 
     useEffect(() => {
         const storedCardList = getStoredCardList();
@@ -42,6 +44,8 @@ const Dashboard = () => {
             // Clear the cart when closing the modal
             clearStoredCardList();
             setCardList([]);
+            // Go to Home after click close button
+            Navigete('/');
         }
         setIsModalOpen(!isModalOpen);
     };
@@ -57,11 +61,14 @@ const Dashboard = () => {
             text: "Successfully Clear the Wish List",
             showConfirmButton: false,
             timer: 3000,
-          });
+        });
     }
 
     return (
         <div className="relative z-0">
+            <Helmet>
+                <title>Dashboard | GadgetHeaven</title>
+            </Helmet>
             {/* Dashboard Top Section */}
             <div className="py-10 pb-32 text-white text-center bg-purple-500">
                 <h1 className="text-2xl md:text-4xl font-bold">Dashboard</h1>

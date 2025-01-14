@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 import {
   addToStoredCardList,
   addToStoredWishList,
@@ -27,14 +28,14 @@ const ItemDetails = () => {
         setIsInWishlist(storedWishlist.includes(product_Id));
       });
   }, [product_Id]);
-// card list handle
+  // card list handle
   const handleAddToCart = (id) => {
     addToStoredCardList(id);
   };
-// wishlist handle
+  // wishlist handle
   const handleAddToWishlist = (id) => {
     addToStoredWishList(id);
-    setIsInWishlist(true); 
+    setIsInWishlist(true);
   };
 
   // Loading Message
@@ -44,6 +45,9 @@ const ItemDetails = () => {
 
   return (
     <div className="pb-20 md:pb-40 bg-gray-50">
+      <Helmet>
+        <title>{item ? `GadgetHeaven | ${item.product_title}` : 'GadgetHeaven - Product Not Found'}</title>
+      </Helmet>
       {/* Banner Section */}
       <div className="pt-10 pb-40 text-white text-center bg-purple-500">
         <h1 className="text-2xl md:text-4xl font-bold">Product Details</h1>
@@ -95,11 +99,10 @@ const ItemDetails = () => {
                       <svg
                         key={i}
                         xmlns="http://www.w3.org/2000/svg"
-                        className={`h-5 w-5 ${
-                          i < Math.round(item.rating)
+                        className={`h-5 w-5 ${i < Math.round(item.rating)
                             ? "text-yellow-500"
                             : "text-gray-300"
-                        }`}
+                          }`}
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
@@ -123,11 +126,10 @@ const ItemDetails = () => {
                 </button>
                 <button
                   onClick={() => handleAddToWishlist(item.product_id)}
-                  className={`px-3 py-2 flex justify-center items-center rounded-full transition ${
-                    isInWishlist
+                  className={`px-3 py-2 flex justify-center items-center rounded-full transition ${isInWishlist
                       ? "bg-gray-300 text-gray-400 cursor-not-allowed"
                       : "border-2 border-red-500 text-red-500 hover:bg-purple-200"
-                  }`}
+                    }`}
                   disabled={isInWishlist}
                 >
                   <GrFavorite></GrFavorite>
