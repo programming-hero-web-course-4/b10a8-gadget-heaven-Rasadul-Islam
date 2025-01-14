@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const getStoredCardList = () => {
     const storedListStr = localStorage.getItem('card-list');
     if (storedListStr) {
@@ -10,8 +12,23 @@ const getStoredCardList = () => {
 const addToStoredCardList = (id) => {
     const storedList = getStoredCardList();
     if (storedList.includes(id)) {
-        console.log(id, "Already Added this item");
+        Swal.fire({
+            position: "top-center",
+            icon: "error",
+            title: 'Opps!',
+            text: "This item already added in card",
+            showConfirmButton: false,
+            timer: 3000,
+          });
     } else {
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: 'Success!',
+            text: "Successfully added in the Card",
+            showConfirmButton: false,
+            timer: 3000,
+          });
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('card-list', storedListStr);
@@ -30,8 +47,23 @@ const getStoredWishList = () => {
 const addToStoredWishList = (id) => {
     const storedList = getStoredWishList();
     if (storedList.includes(id)) {
-        console.log(id, "Already Added this item");
+        Swal.fire({
+            position: "top-center",
+            icon: "error",
+            title: 'Opps!',
+            text: "This item already added in Wish List",
+            showConfirmButton: false,
+            timer: 3000,
+          });
     } else {
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: 'Success!',
+            text: "Successfully added in the Wish List",
+            showConfirmButton: false,
+            timer: 3000,
+          });
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('wish-list', storedListStr);
