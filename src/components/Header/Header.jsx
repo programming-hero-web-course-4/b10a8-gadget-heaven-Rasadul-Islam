@@ -44,7 +44,9 @@ const Header = () => {
 
                     {/* Icons */}
                     <div className="flex gap-5">
+                        {/* card icon */}
                         <IoCartOutline className="bg-white text-black text-3xl rounded-full p-1"></IoCartOutline>
+                        {/* wish list icon */}
                         <GrFavorite className="bg-white text-black text-3xl rounded-full p-1"></GrFavorite>
                         <div className="md:hidden" onClick={() => setOpen(!open)}>
                             {open === true ? (

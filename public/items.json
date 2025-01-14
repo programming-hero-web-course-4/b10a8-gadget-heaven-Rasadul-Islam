@@ -14,7 +14,7 @@
             "Battery": "5000mAh"
         },
         "availability": true,
-        "rating": 4.8,
+        "rating": 3.8,
         "brand": "Apple",
         "color": "Titanium"
     },
@@ -71,7 +71,7 @@
             "Battery": "5000mAh"
         },
         "availability": true,
-        "rating": 4.5,
+        "rating": 2.8,
         "brand": "OnePlus",
         "color": "Eternal Green"
     },
@@ -90,7 +90,7 @@
             "Battery": "5000mAh"
         },
         "availability": true,
-        "rating": 4.4,
+        "rating": 4.0,
         "brand": "Sony",
         "color": "Platinum Silver"
     },
@@ -109,7 +109,7 @@
             "Battery": "4820mAh"
         },
         "availability": true,
-        "rating": 4.6,
+        "rating": 3.5,
         "brand": "Xiaomi",
         "color": "Ceramic White"
     },
@@ -147,7 +147,7 @@
             "Battery": "14-hour battery life"
         },
         "availability": true,
-        "rating": 4.7,
+        "rating": 4.4,
         "brand": "Dell",
         "color": "Platinum"
     },

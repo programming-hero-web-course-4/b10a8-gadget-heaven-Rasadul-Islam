@@ -57,7 +57,7 @@ const Gadgets = () => {
             ? "Explore Cutting-Edge Gadgets"
             : `Explore ${selectedCategory}`}
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10">
           {filteredGadgets.length > 0 ? (
             filteredGadgets.map((gadget) => (
               <Gadget gadget={gadget} key={gadget.product_id}></Gadget>

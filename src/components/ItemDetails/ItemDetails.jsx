@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ItemDetails = () => {
-    const { product_Id } = useParams(); 
+    const { product_Id } = useParams();
     const [item, setItem] = useState(null);
     const [cart, setCart] = useState([]);
     const [wishlist, setWishlist] = useState([]);
@@ -35,9 +35,14 @@ const ItemDetails = () => {
         }
     };
 
+    // Loading Massage
+    if (!item) {
+        return <div className="text-center py-20">Loading...</div>;
+    }
+
     return (
         <div className="pb-20 md:pb-40 bg-gray-50">
-            {/* Top Section */}
+            {/* Bannar Section */}
             <div className="pt-10 pb-40 text-white text-center bg-purple-500">
                 <h1 className="text-2xl md:text-4xl font-bold">Product Details</h1>
                 <p className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto mt-5 text-gray-100">
@@ -74,26 +79,44 @@ const ItemDetails = () => {
                                         </li>
                                     ))}
                                 </ul>
+                                {/* Rating Section */}
+                                <div className="mt-4">
+                                    <h1 className="text-black text-lg font-bold mr-2">Rating:</h1> 
+                                    <div className="flex mt-1">
+                                        {Array.from({ length: 5 }, (_, i) => (
+                                            <svg
+                                                key={i}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className={`h-5 w-5 ${i < Math.round(item.rating) ? "text-yellow-500" : "text-gray-300"
+                                                    }`}
+                                                fill="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                            </svg>
+                                        ))}
+                                        <span className=" ml-2 px-2 bg-gray-300 rounded-full text-center flex items-center justify-center">{item.rating}</span>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Buttons */}
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
                                 <button
                                     onClick={handleAddToCart}
-                                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+                                    className="bg-purple-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition"
                                 >
-                                    Add to Cart 🛒
+                                    Add to Cart
                                 </button>
                                 <button
                                     onClick={() => handleAddToWishlist(item)}
-                                    className={`px-4 py-2 rounded transition ${
-                                        wishlist.some((wishItem) => wishItem.product_id === item.product_id)
-                                            ? "bg-gray-400 text-gray-600 cursor-not-allowed"
-                                            : "bg-red-500 text-white hover:bg-red-600"
-                                    }`}
+                                    className={`px-4 py-2 rounded-full transition ${wishlist.some((wishItem) => wishItem.product_id === item.product_id)
+                                            ? "bg-gray-300 text-gray-400 cursor-not-allowed"
+                                            : "border-2 border-gray-500 text-black  hover:bg-purple-200"
+                                        }`}
                                     disabled={wishlist.some((wishItem) => wishItem.product_id === item.product_id)}
                                 >
-                                    Add to Wishlist ♥
+                                    Add to Wishlist
                                 </button>
                             </div>
                         </div>
