@@ -11,7 +11,7 @@ const ItemDetails = () => {
 
     useEffect(() => {
         // Fetch item details from JSON
-        fetch("../../../public/items.json")
+        fetch("/items.json")
             .then((res) => res.json())
             .then((data) => {
                 const selectedItem = data.find(
@@ -27,18 +27,19 @@ const ItemDetails = () => {
         //     alert(`${item.product_title} has been added to your cart!`);
         // }
 
-        addToStoredWishList(id);
+        addToStoredCardList(id);
         
     };
 
     const handleAddToWishlist = (id) => {
+        addToStoredWishList(id);
         if (item) {
             if (!wishlist.find((wishItem) => wishItem.product_id === item.product_id)) {
                 setWishlist((prevWishlist) => [...prevWishlist, item]);
                 alert(`${item.product_title} has been added to your wishlist!`);
             }
         }
-        addToStoredWishList(id);
+       
     };
 
     // Loading Massage
