@@ -11,10 +11,12 @@ import Dashboard from './components/Dashboard/Dashboard.jsx'
 import Root from './components/Root/Root.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import ItemDetails from './components/ItemDetails/ItemDetails.jsx';
+import ContactUs from './components/ContactUs/ContactUs.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    loader: ()=> fetch('/items.json'),
     errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
@@ -32,7 +34,12 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard> ,
-        loader: ()=> fetch('/items.json')
+        loader: ()=> fetch('/items.json'),
+      },
+      ,
+      {
+        path: "/contact",
+        element: <ContactUs></ContactUs> ,
       },
     ]
   },

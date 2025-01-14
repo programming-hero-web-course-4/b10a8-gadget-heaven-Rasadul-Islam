@@ -83,10 +83,10 @@ const Dashboard = () => {
                         <TabPanel>
                             <div className="container max-w-4xl px-5 mx-auto">
                                 <div className="flex w-full justify-start items-center">
-                                    <div className="w-1/4 text-start">
+                                    <div className="w-1/5 md:w-1/4 text-start">
                                         <h1 className="font-bold">Cart</h1>
                                     </div>
-                                    <div className="flex justify-end items-center w-3/4 gap-5 text-base">
+                                    <div className="flex justify-end items-center w-4/5 md:w-3/4 gap-2 md:gap-5 text-sm md:text-base">
                                         <h1 className="font-bold">Total Cost: ${totalPrice.toFixed(2)}</h1>
                                         <button
                                             onClick={handleSortByPrice}

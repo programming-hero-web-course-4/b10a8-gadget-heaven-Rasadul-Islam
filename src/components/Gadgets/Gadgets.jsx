@@ -4,7 +4,7 @@ import Gadget from "../Gadget/Gadget";
 const Gadgets = () => {
   const [gadgets, setGadgets] = useState([]);
   const [filteredGadgets, setFilteredGadgets] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("All Products");
 
   useEffect(() => {
     fetch("../../../public/items.json")
@@ -18,7 +18,7 @@ const Gadgets = () => {
   // Handle category selection
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    if (category === "All") {
+    if (category === "All Products") {
       setFilteredGadgets(gadgets);
     } else {
       const filtered = gadgets.filter(
@@ -31,9 +31,9 @@ const Gadgets = () => {
   return (
     <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
-      <div className="mt-10 w-full md:w-1/5 p-5 border-2 border-gray-200 h-fit flex md:flex-col flex-row rounded-xl md:mt-24 ">
+      <div className="mt-10 w-full mx-auto md:w-1/5 p-5 border-2 border-gray-200 h-fit flex md:flex-col flex-row rounded-xl md:mt-24 ">
         <ul className="gap-3 text-sm md:text-lg w-full md:w-full flex flex-row md:flex-col font-bold justify-around">
-          {["All Product", "Phone", "Laptop", "Accessories", "Watch"].map((category) => (
+          {["All Products", "Phone", "Laptop", "Accessories", "Watch"].map((category) => (
             <li key={category}>
               <button
                 onClick={() => handleCategoryChange(category)}
@@ -53,7 +53,7 @@ const Gadgets = () => {
       {/* Gadgets List */}
       <div className="md:w-3/4 p-5">
         <h1 className="text-4xl text-center font-bold">
-          {selectedCategory === "All"
+          {selectedCategory === "All Products"
             ? "Explore Cutting-Edge Gadgets"
             : `Explore ${selectedCategory}`}
         </h1>

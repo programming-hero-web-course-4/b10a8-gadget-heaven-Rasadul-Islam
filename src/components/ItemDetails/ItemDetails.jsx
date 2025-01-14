@@ -5,6 +5,7 @@ import {
   addToStoredWishList,
   getStoredWishList,
 } from "../../Utility/AddToDb";
+import { GrFavorite } from "react-icons/gr";
 
 const ItemDetails = () => {
   const { product_Id } = useParams();
@@ -113,7 +114,7 @@ const ItemDetails = () => {
               </div>
 
               {/* Buttons */}
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <div className="mt-10 flex justify-center gap-4">
                 <button
                   onClick={() => handleAddToCart(item.product_id)}
                   className="bg-purple-500 text-white px-3 py-2 rounded-full hover:bg-blue-600 transition"
@@ -122,14 +123,14 @@ const ItemDetails = () => {
                 </button>
                 <button
                   onClick={() => handleAddToWishlist(item.product_id)}
-                  className={`px-3 py-2 rounded-full transition ${
+                  className={`px-3 py-2 flex justify-center items-center rounded-full transition ${
                     isInWishlist
                       ? "bg-gray-300 text-gray-400 cursor-not-allowed"
-                      : "border-2 border-gray-500 text-black hover:bg-purple-200"
+                      : "border-2 border-red-500 text-red-500 hover:bg-purple-200"
                   }`}
                   disabled={isInWishlist}
                 >
-                  {isInWishlist ? "Added Wishlist" : "Add to Wishlist"}
+                  <GrFavorite></GrFavorite>
                 </button>
               </div>
             </div>
