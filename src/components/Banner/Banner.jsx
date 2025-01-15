@@ -15,11 +15,10 @@ const Banner = () => {
             </div>
             <div className='w-3/5 max-w-2xl mx-auto relative '>
                 <div className='absolute -top-28 lg:-top-36 z-30 border-2 border-white p-2 rounded-xl'>
-                    <img src="../../../public/assets/banner.jpg" alt="" className='rounded-xl' />
+                    <img src="../assets/banner.jpg" alt="Banner Image" className='rounded-xl' />
                 </div>
             </div>
         </div>
-
     );
 };
 

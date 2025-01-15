@@ -7,7 +7,7 @@ const Gadgets = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Products");
 
   useEffect(() => {
-    fetch("../../../public/items.json")
+    fetch("../items.json")
       .then((res) => res.json())
       .then((data) => {
         setGadgets(data);
